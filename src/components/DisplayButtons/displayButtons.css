@@ -1,0 +1,252 @@
+.display-buttons-container {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    transform: scale(0.95);
+}
+
+.display-buttons-container.no-content {
+    bottom: -6rem;
+}
+
+.menu-radial {
+    display: grid;
+    place-items: center;
+    height: 80px;
+    width: 80px;
+    padding: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.menu-radial .navigation  {
+    position: relative;
+    bottom: -8px; 
+    right: -8px; 
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-radial .navigation .toggle {
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 65px;
+    height: 65px;
+    font-size: 2em;
+    /* background: rgb(32 32 37); */
+    background: rgb(50, 50, 52);
+    color: #b5babe;
+    border: 2px solid #fff;
+    font-weight: 900;
+    border-radius: 50%;
+    border-color: rgb(32 32 37);
+    display: grid;
+    place-items: center;
+    transition: transform 1.25s;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.menu-radial .navigation .toggle img  {
+    width: 65%;
+    height: 65%;
+}
+
+.menu-radial .navigation li:not(:first-child) {
+    position: absolute;
+    top: -38px;
+    left: -146px;
+    list-style: none;
+    transition: 0.5s;
+    /* transition-delay: calc(0.1s * var(--i)); */
+    /* transition-delay: calc(0.05s * var(--i)); */
+    transition-delay: calc(var(--delay) * var(--i));
+    transform-origin: 140px;
+    transform: rotate(0deg) translateX(110px);
+}
+
+.menu-radial .navigation li:not(:first-child) span {
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    color: var(--clr);
+    border: 2px solid var(--clr);
+    border-radius: 50%;
+    transition: all 1s; /* color, background and box-shadow */
+    transform: rotate(calc(360deg / -8 * var(--i)));
+} 
+
+/* Validate code */
+.menu-radial .navigation li:not(:first-child) span img {
+    width: 57%;
+    height: 57%;
+}
+
+/* Format code */
+.menu-radial .navigation li:nth-child(3) span img {
+    width: 65%;
+    height: 65%;
+}
+
+/* Open editor */
+.menu-radial .navigation li:nth-child(2) span img {
+    width: 65% !important;
+    height: 65% !important;
+}
+
+.menu-radial .navigation.active .toggle {
+    transform: rotate(315deg);
+}
+
+.menu-radial .navigation.active li {
+    transform: rotate(calc(360deg / 8 * var(--i))) translateX(0px);
+}
+
+.menu-radial .navigation li:not(:first-child) span:hover {
+    /* color: #333; */
+    color: #8e8c8c;
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr),
+    0 0 50px var(--clr);
+    transition: all 0s;
+}
+
+.menu-radial .navigation li:not(:first-child) span[data-text]::after {
+    background: rgba(255, 255, 255) !important;
+    line-height: 19px !important;
+    font-size: 18px !important;
+}
+
+/* Data text toolkit */
+
+[data-text]:not(span[data-text]) { 
+    position: relative; 
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 2; 
+    transition: all 0.125s ease-in-out;
+}
+
+[data-text]:not(span[data-text]) img {
+    width: 40px;
+    height: 40px;
+}
+
+[data-text]:not([data-text=""])::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    color: rgba(234, 234, 236, 0.85);
+    transition: all 0.08s ease;
+    z-index: 1070;
+    transform: scale(0);
+    opacity: 0;
+} 
+
+[data-text]:not([data-text=""])[data-pos~="top"]::before {
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    top: -9px;
+    margin: 0 0 0 -6px;
+    border: 6px solid transparent;
+    border-top-color: currentColor;
+    border-bottom: none;
+    transform-origin: center top;
+}
+
+[data-text]:not([data-text=""])[data-pos~="bottom"]::before {
+    left: 50%;
+    right: auto;
+    bottom: -9px;
+    top: auto;
+    margin: 0 0 0 -6px;
+    border: 6px solid transparent;
+    border-bottom-color: currentColor;
+    border-top: none;
+    transform-origin: center bottom;
+}
+
+[data-text]:not([data-text=""])::after {
+    content: attr(data-text);
+    position: absolute;
+    padding: 8px 10px;
+    font-size: 14.5px;
+    line-height: 15px;
+    color: #242428;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.5);
+    background-color: rgba(234, 234, 236, 0.85);
+    white-space: nowrap;
+    transition: all 0.08s ease;
+    z-index: 1070;
+    transform: scale(0);
+    opacity: 0;
+}
+
+[data-text]:not([data-text=""])[data-pos~=bottom][data-pos~=align-left]::after {
+    left: 50%;
+    right: auto;
+    top: 100%;
+    bottom: auto;
+    margin: 9px 0 0 -16px;
+    transform-origin: left top;
+    /* -webkit-backdrop-filter: blur(1.5px); */
+}
+
+[data-text]:not([data-text=""])[data-pos~=bottom][data-pos~=align-right]::after {
+    left: auto;
+    right: 50%;
+    top: 100%;
+    bottom: auto;
+    margin: 9px -16px 0 0;
+    transform-origin: right top;
+    /* -webkit-backdrop-filter: blur(1.5px); */
+}
+
+[data-text]:not([data-text=""])[data-pos~=top][data-pos~=align-left]::after {
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: 100%;
+    margin: 0 0 9px -16px;
+    transform-origin: left bottom;
+    /* -webkit-backdrop-filter: blur(1.5px); */
+}
+
+[data-text]:not([data-text=""])[data-pos~=top][data-pos~=align-right]::after {
+    left: auto;
+    right: 50%;
+    top: auto;
+    bottom: 100%;
+    margin: 0 -16px 9px 0;
+    transform-origin: right bottom;
+    /* -webkit-backdrop-filter: blur(1.5px); */
+}
+
+[data-text]:not([data-text=""]):not(span[data-text]):hover {
+    fill: #fff;
+    border-radius: 3px;
+    background-color: rgba(5, 5, 5, 0.5);
+}
+
+[data-text]:not([data-text=""]):hover::after,
+[data-text]:not([data-text=""]):hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+[data-text]:not([data-text=""]):not([data-instant]):hover::before,
+[data-text]:not([data-text=""]):not([data-instant]):hover::after {
+    transition-delay: 0.25s;
+}
