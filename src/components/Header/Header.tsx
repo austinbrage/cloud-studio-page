@@ -69,7 +69,7 @@ export function HeaderSection() {
                 >
                     <ul>
                         <li onClick={() => {
-                            navigate('/utilities')
+                            navigate('/utilities/faas')
                             setShowUtilities(false)
                         }}>
                             <p>FaaS Comparison</p>

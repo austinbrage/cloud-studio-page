@@ -13,7 +13,7 @@ const router = createBrowserRouter([
                 element: <HomePage/>
             },
             {
-                path: '/utilities',
+                path: '/utilities/faas',
                 element: <UtilitiesPage/>
             }
         ]
