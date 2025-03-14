@@ -1,0 +1,41 @@
+.utilities-menu {
+    position: absolute;
+    top: 4.75rem;
+    left: 21rem;
+    width: 36rem;
+    height: 13rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: #121215;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+}
+
+.utilities-menu > ul {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 1rem;
+}
+
+.utilities-menu > ul > li {
+    width: 17rem;
+    border-radius: 5px;
+    padding: 0.25rem 0.45rem;
+    cursor: pointer;
+}
+
+.utilities-menu > ul > li:hover {
+    background: #353131;
+}
+
+.utilities-menu > ul > li > p {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.825);
+}
+
+.utilities-menu > ul > li > span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+}
