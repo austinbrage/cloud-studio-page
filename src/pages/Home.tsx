@@ -1,5 +1,5 @@
 import { URLS } from '../utils/consts'
-import ReactPlayer from 'react-player'
+import { LazyLoadVideo } from '../utils/lazyVideo'
 import heroBg from '../assets/hero-bg-1.png'
 import terraformIcon from '../assets/svgs/terraform.svg'
 import ansibleIcon from '../assets/svgs/ansible.svg'
@@ -11,9 +11,9 @@ import numberThree from '../assets/svgs/number-three.svg'
 import mainDashboardVideo from '../assets/videos/main-dashboard.mp4'
 import codeDashboardVideo from '../assets/videos/code-dashboard.mp4'
 import execDashboardVideo from '../assets/videos/exec-dashboard.mp4'
-// import mainDashboard from '../assets/main_dashboard.png'
-// import codeDashboard from '../assets/code_dashboard.png'
-// import execDashboard from '../assets/execution_dashboard.png'
+import mainDashboard from '../assets/main_dashboard.png'
+import codeDashboard from '../assets/code_dashboard.png'
+import execDashboard from '../assets/execution_dashboard.png'
 
 export function HomePage() {
 
@@ -73,17 +73,10 @@ export function HomePage() {
 
             <div className='relative top-16 flex flex-col gap-36'>
                 <div className='flex items-center justify-center gap-[200px]'>
-                    {/* <img 
-                        src={mainDashboard} 
-                        alt="Main dashboard image" 
-                        className='w-[550px] relative' 
-                    /> */}
-                    <ReactPlayer 
-                        url={mainDashboardVideo} 
-                        width={'550px'} 
-                        playing
-                        muted 
-                        loop
+                    <LazyLoadVideo
+                        imageSrc={mainDashboard}
+                        videoSrc={mainDashboardVideo}
+                        imageMargin='1'
                     />
                     <div className='relative right-10 w-[500px] h-[90px] flex items-center justify-start gap-5 ps-3 rounded-s-3xl bg-[rgba(30,28,28,0.55)]'>
                         <img 
@@ -107,31 +100,17 @@ export function HomePage() {
                             Edit the main and module files on the code editor for projects and templates
                         </p>
                     </div>
-                    {/* <img 
-                        src={codeDashboard} 
-                        alt="Code dashboard image"
-                        className='w-[550px]' 
-                    /> */}
-                    <ReactPlayer 
-                        url={codeDashboardVideo} 
-                        width={'550px'} 
-                        playing
-                        muted 
-                        loop
+                    <LazyLoadVideo
+                        imageSrc={codeDashboard}
+                        videoSrc={codeDashboardVideo}
+                        imageMargin='7'
                     />
                 </div>
                 <div className='flex items-center justify-center gap-[200px]'>
-                    {/* <img 
-                        src={execDashboard} 
-                        alt="Execution dashboard image" 
-                        className='w-[550px] relative' 
-                    /> */}
-                    <ReactPlayer 
-                        url={execDashboardVideo} 
-                        width={'550px'} 
-                        playing
-                        muted 
-                        loop
+                    <LazyLoadVideo
+                        imageSrc={execDashboard}
+                        videoSrc={execDashboardVideo}
+                        imageMargin='-1'
                     />
                     <div className='relative right-10 w-[500px] h-[90px] flex items-center justify-start gap-5 ps-3 rounded-s-3xl bg-[rgba(30,28,28,0.55)]'>
                         <img 
