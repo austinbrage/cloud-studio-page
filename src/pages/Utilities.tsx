@@ -1,5 +1,5 @@
 import { ServerlessInfo } from '../components/Serverless/Serverless'
-import heroBg from '../assets/hero-bg-2.png'
+import heroBg from '../assets/images/hero-bg-2.png'
 
 export function UtilitiesPage() {
 

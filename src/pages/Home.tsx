@@ -1,6 +1,6 @@
 import { URLS } from '../utils/consts'
 import { LazyLoadVideo } from '../utils/lazyVideo'
-import heroBg from '../assets/hero-bg-1.png'
+import heroBg from '../assets/images/hero-bg-1.png'
 import terraformIcon from '../assets/svgs/terraform.svg'
 import ansibleIcon from '../assets/svgs/ansible.svg'
 import infracostIcon from '../assets/svgs/infracost.svg'
@@ -11,9 +11,9 @@ import numberThree from '../assets/svgs/number-three.svg'
 import mainDashboardVideo from '../assets/videos/main-dashboard.mp4'
 import codeDashboardVideo from '../assets/videos/code-dashboard.mp4'
 import execDashboardVideo from '../assets/videos/exec-dashboard.mp4'
-import mainDashboard from '../assets/main_dashboard.png'
-import codeDashboard from '../assets/code_dashboard.png'
-import execDashboard from '../assets/execution_dashboard.png'
+import mainDashboard from '../assets/images/main_dashboard.png'
+import codeDashboard from '../assets/images/code_dashboard.png'
+import execDashboard from '../assets/images/execution_dashboard.png'
 
 export function HomePage() {
 
