@@ -1,6 +1,10 @@
 import { URLS } from '../utils/consts'
 import ReactPlayer from 'react-player'
 import heroBg from '../assets/hero-bg-1.png'
+import terraformIcon from '../assets/svgs/terraform.svg'
+import ansibleIcon from '../assets/svgs/ansible.svg'
+import infracostIcon from '../assets/svgs/infracost.svg'
+import fileCodeIcon from '../assets/svgs/file-code.svg'
 import numberOne from '../assets/svgs/number-one.svg'
 import numberTwo from '../assets/svgs/number-two.svg'
 import numberThree from '../assets/svgs/number-three.svg'
@@ -19,6 +23,7 @@ export function HomePage() {
 
     return (
         <section className='h-[400vh] overflow-hidden z-10 homepage'>
+            
             <img 
                 src={heroBg} 
                 alt="Home background" 
@@ -141,6 +146,66 @@ export function HomePage() {
                 </div>
             </div>
 
+            <div className='scale-90 mt-48 w-11/12 mx-auto grid grid-cols-2 place-items-center gap-x-0 gap-y-16 z-[1025]'>
+                <div className='w-[526px] h-[244px] rounded-md bg-gradient-to-b from-[rgba(70,68,68,0.15)] to-[rgba(120,118,118,0.15)]'>
+                    <div className='flex items-center gap-5 p-3'>
+                        <img 
+                            src={terraformIcon} 
+                            alt="Terraform Icon" 
+                        />
+                        <p className='text-3xl text-white'>
+                            Terraform integration
+                        </p>
+                    </div>
+                    <p className='w-10/12 mt-4 mx-auto text-lg text-white'>
+                        The app runs the key commands of the terraform tool, renders the outputs and reads the data from the state file
+                    </p>
+                </div>
+                <div className='w-[526px] h-[244px] rounded-md bg-gradient-to-b from-[rgba(70,68,68,0.15)] to-[rgba(120,118,118,0.15)]'>
+                    <div className='flex items-center gap-5 p-3'>
+                        <img 
+                            src={ansibleIcon} 
+                            alt="Ansible Icon" 
+                        />
+                        <p className='text-3xl text-white'>
+                            Ansible integration
+                        </p>
+                    </div>
+                    <p className='w-10/12 mt-4 mx-auto text-lg text-white'>
+                        The app runs the key commands of the ansible tool, and add the hosts data to the inventory automatically
+                    </p>
+                </div>
+                <div className='w-[526px] h-[244px] rounded-md bg-gradient-to-b from-[rgba(70,68,68,0.15)] to-[rgba(120,118,118,0.15)]'>
+                    <div className='flex items-center gap-5 p-3'>
+                        <img 
+                            src={infracostIcon} 
+                            alt="Infracost Icon" 
+                            width={'40px'}
+                        />
+                        <p className='text-3xl text-white'>
+                            Infracost integration
+                        </p>
+                    </div>
+                    <p className='w-10/12 mt-4 mx-auto text-lg text-white'>
+                        The app runs the base and diff commands of the infracost tool, and renders a comprehensible JSON for the results
+                    </p>
+                </div>
+                <div className='w-[526px] h-[244px] rounded-md bg-gradient-to-b from-[rgba(70,68,68,0.15)] to-[rgba(120,118,118,0.15)]'>
+                    <div className='flex items-center gap-5 p-3'>
+                        <img 
+                            src={fileCodeIcon} 
+                            alt="File code Icon" 
+                        />
+                        <p className='text-3xl text-white'>
+                            Built-in code editor
+                        </p>
+                    </div>
+                    <p className='w-10/12 mt-4 mx-auto text-lg text-white'>
+                        The app has an integrated code editor to edit all terraform and ansible files, before running any command
+                    </p>
+                </div>
+            </div>
+            
         </section>
     )
 }
