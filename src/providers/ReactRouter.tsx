@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { LayoutElements } from "../components/Layout/Layout"
 import { MotivationPost } from "../components/Posts/Motivation"
-import { HeaderSection } from "../components/Header/Header"
 import { WorkdirPost } from "../components/Posts/Workdir"
 import { UtilitiesPage } from "../pages/Utilities" 
 import { HomePage } from "../pages/Home"
@@ -8,7 +8,7 @@ import { HomePage } from "../pages/Home"
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <HeaderSection/>,
+        element: <LayoutElements/>,
         children: [
             {
                 index: true,

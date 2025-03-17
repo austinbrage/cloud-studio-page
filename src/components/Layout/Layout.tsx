@@ -6,9 +6,9 @@ import youtubeIcon from '../../assets/svgs/social-youtube.svg'
 import githubIcon from '../../assets/svgs/social-github.svg'
 import discordIcon from '../../assets/svgs/social-discord.svg'
 import linkedinIcon from '../../assets/svgs/social-linkedin.svg'
-import './header.css'
+import './layout.css'
 
-export function HeaderSection() {
+export function LayoutElements() {
 
     const navigate = useNavigate()
     const { pathname } = useLocation()
