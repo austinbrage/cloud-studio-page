@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 // import { useDetectClickOutside } from 'react-detect-click-outside'
 import settingsGray from '../../assets/svgs/settings-gray.svg'
 import priceTagGray from '../../assets/svgs/price-tag-gray.svg'
@@ -32,16 +32,35 @@ export function DisplayButtons({
     const [isProcessorHovered, setIsProcessorHovered] = useState<boolean>(false)
     const [isGoogleHovered, setIsGoogleHovered] = useState<boolean>(false)
     const [isPriceHovered, setIsPriceHovered] = useState<boolean>(false)
+    const [bottomOffset, setBottomOffset] = useState(10)
 
     const toggleMenu = () => menuRadialRef.current && menuRadialRef.current.classList.toggle('active')
     const closeMenu = () => menuRadialRef.current && menuRadialRef.current.classList.remove('active')
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollHeight = document.documentElement.scrollHeight
+            const scrollPosition = window.innerHeight + window.scrollY
+            const distanceToBottom = scrollHeight - scrollPosition
+
+            if (distanceToBottom < 390) {
+                setBottomOffset(100 - distanceToBottom + 300)
+            } else {
+                setBottomOffset(10)
+            }
+        }
+
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
 
     // const containerRef = useDetectClickOutside({
     //     onTriggered: closeMenu
     // })
 
     return (
-        <div className='display-buttons-container'>
+        <div className='display-buttons-container' style={{ bottom: `${bottomOffset}px` }}>
             <div className='menu-radial'>
                 <ul 
                     ref={menuRadialRef}

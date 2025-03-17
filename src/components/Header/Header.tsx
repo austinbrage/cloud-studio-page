@@ -1,12 +1,17 @@
-import { useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { URLS } from '../../utils/consts'
 import appLogo from '/app-logo.svg'
+import youtubeIcon from '../../assets/svgs/social-youtube.svg'
+import githubIcon from '../../assets/svgs/social-github.svg'
+import discordIcon from '../../assets/svgs/social-discord.svg'
+import linkedinIcon from '../../assets/svgs/social-linkedin.svg'
 import './header.css'
 
 export function HeaderSection() {
 
     const navigate = useNavigate()
+    const { pathname } = useLocation()
 
     const [showUtilities, setShowUtilities] = useState<boolean>(false)
 
@@ -14,8 +19,13 @@ export function HeaderSection() {
         window.open(URLS.DOCS_START, "_blank")
     }
 
+    useEffect(() => {
+        if(pathname === '/') return
+        window.scrollTo(0, 0)
+    }, [pathname])
+
     return (
-        <>
+        <div className='relative'>
             <header 
                 className='fixed flex justify-between items-center px-7 w-full h-[75px] backdrop-blur-md bg-transparent z-50'
             >
@@ -90,9 +100,54 @@ export function HeaderSection() {
                     </ul>
                 </div>
             </header>
+            
             <main className='relative top-20 w-full min-h-screen'>
                 <Outlet/>
             </main>
-        </>
+
+            <footer className='absolute -bottom-20 w-full h-[150px] grid grid-cols-2 px-3 py-4 bg-[rgba(188,188,188,0.05)] z-[1025]'>
+                <a 
+                    onClick={() => navigate('/')}
+                    className='flex justify-start items-start gap-4 cursor-pointer'
+                >
+                    <img 
+                        src={appLogo} 
+                        alt="CloudStudio logo"
+                        className='w-[35px] h-[35px]'
+                    />
+                    <p className='font-semibold text-lg text-[#FFFFFFDE]'>
+                        CloudStudio
+                    </p>
+                </a>
+                <p className='flex items-start justify-end text-lg text-[rgba(255,255,255,0.7)] cursor-pointer'>
+                    about the creator
+                </p>
+                <div className='flex items-end justify-start gap-3 font-medium text-white'>
+                    <img 
+                        src={youtubeIcon} 
+                        alt="Youtube icon" 
+                        className='w-[35px] cursor-pointer'
+                    />
+                    <img 
+                        src={githubIcon} 
+                        alt="Github icon" 
+                        className='w-[32px] cursor-pointer'
+                    />
+                    <img 
+                        src={discordIcon} 
+                        alt="Discord icon" 
+                        className='w-[32px] cursor-pointer'
+                    />
+                    <img 
+                        src={linkedinIcon} 
+                        alt="Linkedin icon" 
+                        className='w-[32px] cursor-pointer'
+                    />
+                </div>
+                <p className='flex items-end justify-end font-medium text-[rgba(255,255,255,0.9)]'>
+                    Copyright © 2025 CloudStudio
+                </p>
+            </footer>
+        </div>
     )
 }
