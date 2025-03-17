@@ -158,7 +158,6 @@ a {
 body {
   margin: 0;
   min-width: 320px;
-  min-height: calc(400vh + 175px);
   background: #0E0F13;
 }
 

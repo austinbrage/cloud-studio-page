@@ -5,6 +5,26 @@
   text-align: center;
 } */
 
+.main-background {
+  background-image: url('./assets/images/hero-bg-1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #0E0F13;
+  width: 100%;
+  overflow: hidden;
+}
+
+.alternative-background {
+  background-image: url('./assets/images/hero-bg-2.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #0E0F13;
+  width: 100%;
+  overflow: hidden;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

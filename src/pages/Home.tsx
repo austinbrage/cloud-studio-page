@@ -1,6 +1,8 @@
 import { URLS } from '../utils/consts'
+import { useNavigate } from 'react-router-dom'
 import { LazyLoadVideo } from '../utils/lazyVideo'
-import heroBg from '../assets/images/hero-bg-1.png'
+import blogImg1 from '../assets/images/blog-img-1.png'
+import blogImg2 from '../assets/images/blog-img-2.png'
 import terraformIcon from '../assets/svgs/terraform.svg'
 import ansibleIcon from '../assets/svgs/ansible.svg'
 import infracostIcon from '../assets/svgs/infracost.svg'
@@ -17,18 +19,14 @@ import execDashboard from '../assets/images/execution_dashboard.png'
 
 export function HomePage() {
 
+    const navigate = useNavigate()    
+
     const handleInstallBtn = () => {
         window.open(URLS.DOCS_START, "_blank")
     }
 
     return (
-        <section className='h-[400vh] overflow-hidden z-10 homepage'>
-            
-            <img 
-                src={heroBg} 
-                alt="Home background" 
-                className='w-full h-[88%] fixed z-0'
-            />
+        <section className='main-background'>
 
             <div className='relative mt-6 flex items-center justify-around w-11/12 h-64'>
                 <div className='flex flex-col gap-4'>
@@ -184,7 +182,61 @@ export function HomePage() {
                     </p>
                 </div>
             </div>
-            
+
+            <div className='mt-48 flex items-center justify-evenly w-full z-[1026]'>
+                <div 
+                    onClick={() => navigate('/blog/motivation')}
+                    className='flex gap-4 w-[550px] h-[300px] rounded-sm bg-[rgba(53,50,50,0.2)] cursor-pointer transition-all duration-300 hover:scale-105'
+                >
+                    <img 
+                        src={blogImg1} 
+                        alt="Blog image 1" 
+                        className='w-[258px] h-full'
+                    />
+                    <div className='mt-3 flex flex-col gap-5'>
+                        <p className='font-["Alef"] text-[rgba(255,255,255,0.8)]'>
+                            February 15, 2025
+                        </p>
+                        <p className='w-11/12 text-xl text-white'>
+                            Motivation behind the creation of the app
+                        </p>
+                        <p className='font-light text-white'>
+                            This app was initially a side project made to ease the process of learning the cloud with terraform and ansible.
+                        </p>
+
+                        <p className='self-end mt-10 me-3 font-["Alkatra"] text-[rgba(182,179,179,0.8)]'> 
+                            Austin Brage
+                        </p>
+                    </div>
+                </div>
+                <div 
+                    onClick={() => navigate('/blog/workdir')}
+                    className='flex gap-4 w-[550px] h-[300px] rounded-sm bg-[rgba(53,50,50,0.2)] cursor-pointer transition-all duration-300 hover:scale-105'
+                >
+                    <img 
+                        src={blogImg2} 
+                        alt="Blog image 2" 
+                        className='w-[258px] h-full'
+                    />
+                    <div className='mt-3 flex flex-col gap-5'>
+                        <p className='font-["Alef"] text-[rgba(255,255,255,0.8)]'>
+                            February 15, 2025
+                        </p>
+                        <p className='w-11/12 text-xl text-white'>
+                            The heart of the app, explaining the WORKDIR
+                        </p>
+                        <p className='font-light text-white'>
+                            CloudStudio can be explain simply as a code editor for terraform & ansible projects that are stored inside a workdir.
+                        </p>
+                        <p className='self-end mt-10 me-3 font-["Alkatra"] text-[rgba(182,179,179,0.8)]'> 
+                            Austin Brage
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div className='h-[400px]'></div>
+
         </section>
     )
 }
