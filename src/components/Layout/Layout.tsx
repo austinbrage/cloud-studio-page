@@ -105,7 +105,7 @@ export function LayoutElements() {
                 <Outlet/>
             </main>
 
-            <footer className='absolute -bottom-20 w-full h-[150px] grid grid-cols-2 px-3 py-4 bg-[rgba(188,188,188,0.05)] z-[1025]'>
+            <footer className='absolute -bottom-20 w-full h-[150px] grid grid-cols-2 px-14 py-4 bg-[rgba(188,188,188,0.05)] backdrop-blur-lg z-[1025]'>
                 <a 
                     onClick={() => navigate('/')}
                     className='flex justify-start items-start gap-4 cursor-pointer'
