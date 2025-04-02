@@ -10,12 +10,11 @@ import fileCodeIcon from '../assets/svgs/file-code.svg'
 import numberOne from '../assets/svgs/number-one.svg'
 import numberTwo from '../assets/svgs/number-two.svg'
 import numberThree from '../assets/svgs/number-three.svg'
-import mainDashboardVideo from '../assets/videos/main-dashboard.mp4'
-import codeDashboardVideo from '../assets/videos/code-dashboard.mp4'
-import execDashboardVideo from '../assets/videos/exec-dashboard.mp4'
 import mainDashboard from '../assets/images/main_dashboard.png'
 import codeDashboard from '../assets/images/code_dashboard.png'
 import execDashboard from '../assets/images/execution_dashboard.png'
+
+const baseVideoStorage = 'https://cloud-studio-page-prod-05tg.s3.us-east-1.amazonaws.com'
 
 export function HomePage() {
 
@@ -73,7 +72,7 @@ export function HomePage() {
                 <div className='flex items-center justify-center gap-[200px]'>
                     <LazyLoadVideo
                         imageSrc={mainDashboard}
-                        videoSrc={mainDashboardVideo}
+                        videoSrc={`${baseVideoStorage}/main-dashboard.mp4`}
                         imageMargin='1'
                     />
                     <div className='relative right-10 w-[500px] h-[90px] flex items-center justify-start gap-5 ps-3 rounded-s-3xl bg-[rgba(30,28,28,0.55)]'>
@@ -100,14 +99,14 @@ export function HomePage() {
                     </div>
                     <LazyLoadVideo
                         imageSrc={codeDashboard}
-                        videoSrc={codeDashboardVideo}
+                        videoSrc={`${baseVideoStorage}/code-dashboard.mp4`}
                         imageMargin='7'
                     />
                 </div>
                 <div className='flex items-center justify-center gap-[200px]'>
                     <LazyLoadVideo
                         imageSrc={execDashboard}
-                        videoSrc={execDashboardVideo}
+                        videoSrc={`${baseVideoStorage}/exec-dashboard.mp4`}
                         imageMargin='-1'
                     />
                     <div className='relative right-10 w-[500px] h-[90px] flex items-center justify-start gap-5 ps-3 rounded-s-3xl bg-[rgba(30,28,28,0.55)]'>
