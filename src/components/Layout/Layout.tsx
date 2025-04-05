@@ -127,21 +127,24 @@ export function LayoutElements() {
                         src={youtubeIcon} 
                         alt="Youtube icon" 
                         className='w-[35px] cursor-pointer'
+                        onClick={() => window.open('https://www.youtube.com/@austinbrage')}
                     />
                     <img 
                         src={githubIcon} 
                         alt="Github icon" 
                         className='w-[32px] cursor-pointer'
-                    />
+                        onClick={() => window.open('https://github.com/austinbrage')}
+                        />
                     <img 
                         src={discordIcon} 
                         alt="Discord icon" 
-                        className='w-[32px] cursor-pointer'
+                        className='w-[32px] opacity-50'
                     />
                     <img 
                         src={linkedinIcon} 
                         alt="Linkedin icon" 
                         className='w-[32px] cursor-pointer'
+                        onClick={() => window.open('https://www.linkedin.com/in/agustin-brage-46946a149/')}
                     />
                 </div>
                 <p className='flex items-end justify-end font-medium text-[rgba(255,255,255,0.9)]'>
