@@ -1,4 +1,4 @@
-const DOCS_PAGE = 'https://cloud-studio-docs.pages.dev'
+const DOCS_PAGE = 'https://docs.cloudstudiopro.app'
 
 export const URLS = {
     DOCS_HOME: DOCS_PAGE,
