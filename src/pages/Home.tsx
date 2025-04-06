@@ -55,6 +55,7 @@ export function HomePage() {
                         </button>
                         <button 
                             type="button"
+                            onClick={() => window.open('https://youtu.be/GYM_bfkdrZI')}
                             className='w-max font-bold tracking-wider text-[#CFC9C9] rounded-2 border-2 border-[#479DAC] hover:scale-105 hover:transition-all hover:duration-300  transition-all duration-300'
                         >
                             Watch tutorial
