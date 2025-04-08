@@ -78,7 +78,15 @@ export function WorkdirPost() {
                         How do I contribute?
                     </p>
                     <p className='opacity-90'>
-                        Install the app, create a new project with the default template, write some code, deploy it, make it work as intended, store it on templates, and make a <strong>pull request</strong> to the official workdir.
+                        Install the app, create a new project with the default template, write some code, deploy it, make it work as intended, store it on templates, and make a <strong>pull request</strong> to the 
+                        <a 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            href="https://github.com/austinbrage/cloud-studio-workdir" 
+                            className='ps-1 tracking-wider text-pink-300'
+                        >
+                            official workdir.
+                        </a>
                     </p>
                     <p className='mt-7 italic tracking-wide opacity-80'>
                         The templates are separate on different folders by category, like "virtual machines", "serverless functions", "clusters", etc

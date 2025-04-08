@@ -59,6 +59,7 @@ export function LayoutElements() {
                                 Utilities
                             </li>
                             <li 
+                                onClick={() => window.open('https://discord.gg/ChgyCwTKKf')}
                                 className='text-lg tracking-wider cursor-pointer text-[#ffffff8c]'
                             >
                                 Community
@@ -133,12 +134,13 @@ export function LayoutElements() {
                         src={githubIcon} 
                         alt="Github icon" 
                         className='w-[32px] cursor-pointer'
-                        onClick={() => window.open('https://github.com/austinbrage')}
+                        onClick={() => window.open('https://github.com/austinbrage/cloud-studio-workdir')}
                         />
                     <img 
                         src={discordIcon} 
                         alt="Discord icon" 
-                        className='w-[32px] opacity-50'
+                        className='w-[32px] cursor-pointer'
+                        onClick={() => window.open('https://discord.gg/ChgyCwTKKf')}
                     />
                     <img 
                         src={linkedinIcon} 
