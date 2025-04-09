@@ -120,7 +120,10 @@ export function LayoutElements() {
                         CloudStudio
                     </p>
                 </a>
-                <p className='flex items-start justify-end text-lg text-[rgba(255,255,255,0.7)] cursor-pointer'>
+                <p 
+                    onClick={() => window.open('https://austinbrage.me/')}
+                    className='flex items-start justify-end text-lg text-[rgba(255,255,255,0.7)] cursor-pointer'
+                >
                     about the creator
                 </p>
                 <div className='flex items-end justify-start gap-3 font-medium text-white'>
@@ -146,7 +149,7 @@ export function LayoutElements() {
                         src={linkedinIcon} 
                         alt="Linkedin icon" 
                         className='w-[32px] cursor-pointer'
-                        onClick={() => window.open('https://www.linkedin.com/in/agustin-brage-46946a149/')}
+                        onClick={() => window.open('https://www.linkedin.com/in/austinbrage')}
                     />
                 </div>
                 <p className='flex items-end justify-end font-medium text-[rgba(255,255,255,0.9)]'>
